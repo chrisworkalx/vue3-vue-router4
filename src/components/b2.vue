@@ -10,7 +10,7 @@ const count = ref(0);
 
 <script>
 export default {
-  name: "b",
+  name: "b2",
 };
 </script>
 

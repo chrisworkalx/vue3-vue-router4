@@ -1,28 +1,24 @@
-import { createWebHashHistory, createRouter } from "vue-router";
-import A1 from "../components/a1.vue";
-import A2 from "../components/a2.vue";
-import B1 from "../components/b1.vue";
-import B2 from "../components/b2.vue";
+import { createWebHistory, createRouter } from "vue-router";
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     {
       path: "/a",
       name: "a",
-      component: {
-        default: A1,
-        one: A1,
-        two: A2,
+      components: {
+        default: () => import("../components/a1.vue"),
+        one: () => import("../components/a2.vue"),
+        two: () => import("../components/a2.vue"),
       },
     },
     {
       path: "/b",
       name: "b",
-      component: {
-        default: B1,
-        one: B1,
-        two: B2,
+      components: {
+        default: () => import("../components/b1.vue"),
+        one: () => import("../components/b1.vue"),
+        two: () => import("../components/b2.vue"),
       },
     },
   ],
